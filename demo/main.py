@@ -8,13 +8,13 @@ from clc.langchain_application import LangChainApplication
 
 # 修改成自己的配置！！！
 class LangChainCFG:
-    llm_model_name = '/liuzyai04/thuir/lht/context_learning/chatGLM-6B'  # 本地模型文件 or huggingface远程仓库
-    embedding_model_name = './text2vec'  # 检索模型文件 or huggingface远程仓库
+    llm_model_name = '/data/cl/law/LexiLaw/demo/model/LexiLaw_finetune'  # 本地模型文件 or huggingface远程仓库
+    embedding_model_name = '/data/cl/law/LexiLaw/demo/text2vec/text2vec-large-chinese'  # 检索模型文件 or huggingface远程仓库
     vector_store_path = './cache'
     docs_path = './docs'
     kg_vector_stores = {
-        '刑法法条': './cache/legal_article',
-        '刑法书籍': './cache/legal_book',
+        '刑法法条': '/data/cl/law/LexiLaw/demo/cache/legal_article',
+        '刑法书籍': '/data/cl/law/LexiLaw/demo/cache/legal_book',
         '初始化': './cache',
     }  # 可以替换成自己的知识库，如果没有需要设置为None
     # kg_vector_stores=None
