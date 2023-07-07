@@ -107,7 +107,7 @@ def predict(input,
 with open("assets/custom.css", "r", encoding="utf-8") as f:
     customCSS = f.read()
 with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
-    gr.Markdown("""<h1><center>LexiLaw-中文法律大模型</center></h1>
+    gr.Markdown("""<h1><center>lx中文法律大模型</center></h1>
         <center><font size=3>
         </center></font>
         """)
@@ -162,7 +162,7 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
 
         with gr.Column(scale=4):
             with gr.Row():
-                chatbot = gr.Chatbot(label='LexiLaw').style(height=400)
+                chatbot = gr.Chatbot(label='lx').style(height=400)
             with gr.Row():
                 message = gr.Textbox(label='请输入问题')
             with gr.Row():
@@ -170,7 +170,7 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
                 send = gr.Button("🚀 发送")
             with gr.Row():
                 gr.Markdown("""提醒：<br>
-                                        LexiLaw 是基于深度学习技术构建的，它可以提供有价值的法律建议和解释，但不应视为法律专家的替代品。在重要的法律事务中，建议您咨询专业的法律顾问或律师。 <br>
+                                        lx 是基于深度学习技术构建的，它可以提供有价值的法律建议和解释，但不应视为法律专家的替代品。在重要的法律事务中，建议您咨询专业的法律顾问或律师。 <br>
                                         """)
         with gr.Column(scale=2):
             search = gr.Textbox(label='搜索结果')
