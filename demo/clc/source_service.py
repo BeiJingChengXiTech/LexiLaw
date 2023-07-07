@@ -21,6 +21,7 @@ from langchain.vectorstores import FAISS
 class SourceService(object):
     def __init__(self, config):
         self.vector_store = None
+        print("----------SourceService init")
         self.config = config
         self.embeddings = HuggingFaceEmbeddings(model_name=self.config.embedding_model_name)
         self.docs_path = self.config.docs_path
@@ -31,11 +32,13 @@ class SourceService(object):
         初始化本地知识库向量
         :return:
         """
+        print("----------init_source_vector")
         docs = []
         for doc in os.listdir(self.docs_path):
             if doc.endswith('.txt'):
                 print(doc)
                 loader = UnstructuredFileLoader(f'{self.docs_path}/{doc}', mode="elements")
+                print("----------UnstructuredFileLoader loader", f'{self.docs_path}/{doc}')
                 doc = loader.load()
                 docs.extend(doc)
         self.vector_store = FAISS.from_documents(docs, self.embeddings)
@@ -48,10 +51,13 @@ class SourceService(object):
         self.vector_store.save_local(self.vector_store_path)
 
     def load_vector_store(self, path):
+        print("----------load_vector_store")
         if path is None:
             self.vector_store = FAISS.load_local(self.vector_store_path, self.embeddings)
+            print("----------load_vector_store self.vector_store_path", self.vector_store_path)
         else:
             self.vector_store = FAISS.load_local(path, self.embeddings)
+            print("----------load_vector_store path", path)
         return self.vector_store
 
     def search_web(self, query):
