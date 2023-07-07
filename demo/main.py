@@ -13,8 +13,8 @@ class LangChainCFG:
     vector_store_path = './cache'
     docs_path = './docs'
     kg_vector_stores = {
-        '刑法法条': './cache/legal_article',
-        '刑法书籍': './cache/legal_book',
+        '法律法条': './cache/legal_article',
+        '法律书籍': './cache/legal_book',
         '初始化': './cache',
     }  # 可以替换成自己的知识库，如果没有需要设置为None
     # kg_vector_stores=None
