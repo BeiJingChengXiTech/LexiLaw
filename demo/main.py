@@ -8,7 +8,7 @@ from clc.langchain_application import LangChainApplication
 
 # 修改成自己的配置！！！
 class LangChainCFG:
-    llm_model_name = '/data/cl/law/LexiLaw/demo/model/LexiLaw_finetune'  # 本地模型文件 or huggingface远程仓库
+    llm_model_name = '/data/chat/chatglm2-6b'  # 本地模型文件 or huggingface远程仓库
     embedding_model_name = '/data/cl/law/LexiLaw/demo/text2vec/text2vec-large-chinese'  # 检索模型文件 or huggingface远程仓库
     vector_store_path = './cache'
     docs_path = './docs'
